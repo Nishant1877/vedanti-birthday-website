@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0E1118">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <title>A Journey to November 14th • For Vedanti</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Ambient Background & Lightweight Stardust Canvas -->
+  <div class="aurora-bg"></div>
+  <canvas id="star-canvas"></canvas>
+
+  <!-- Persistent Progress Bar -->
+  <div class="progress-container">
+    <div id="progress-fill" class="progress-fill"></div>
+  </div>
+
+  <!-- Persistent Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <span class="birthday-badge">✨ Nov 14 ✨</span>
+      <span id="chapter-title-pill" class="chapter-title-pill">The Mysterious Invitation</span>
+    </div>
+    <div class="header-right">
+      <span id="chapter-counter" class="chapter-counter">1 / 14</span>
+      <button id="music-toggle-btn" class="audio-btn" aria-label="Toggle Soundtrack">🎵 Music On</button>
+    </div>
+  </header>
+
+  <!-- Main Multi-Chapter App Container -->
+  <main id="app">
+
+    <!-- ====================================================================
+         CHAPTER 1: THE MYSTERIOUS INVITATION
+         ==================================================================== -->
+    <section id="chapter-1" class="chapter-view active">
+      <p class="chapter-subtitle">A secret realm prepared just for you</p>
+      <h1 class="chapter-heading">The Mysterious Invitation</h1>
+
+      <div class="keyhole-door">
+        <div class="keyhole-peep">
+          <img src="assets/photos/p01_keyhole_reveal.jpeg" alt="A glimpse of Vedanti" loading="lazy">
+          <div class="keyhole-aperture"></div>
+        </div>
+
+        <button id="golden-key" class="golden-key">
+          🗝️ Touch Key to Unlock
+        </button>
+
+        <div class="fun-tool-bar" style="margin-top: 14px;">
+          <button id="knock-door-btn" class="fun-action-btn">🚪 Knock on Door</button>
+        </div>
+        <div id="knock-toast" class="fun-toast-banner hidden" style="max-width: 280px;"></div>
+
+        <!-- Unlocked Reveal Card -->
+        <div id="keyhole-reveal-card" class="keyhole-reveal-card hidden">
+          <img src="assets/photos/p01_keyhole_reveal.jpeg" alt="Vedanti looking stunning in saree">
+          <p class="reveal-message">"The story of the most wonderful girl born on November 14th..."</p>
+          <button id="enter-journey-btn" class="glow-btn">Begin The Journey →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 2: THE COSMIC COUNTDOWN
+         ==================================================================== -->
+    <section id="chapter-2" class="chapter-view">
+      <p class="chapter-subtitle">Counting every precious second</p>
+      <h2 class="chapter-heading">The Cosmic Countdown</h2>
+
+      <div class="countdown-container">
+        <img class="countdown-banner-photo" src="assets/photos/p02_countdown_roses.jpeg" alt="Vedanti with pink roses" loading="lazy">
+
+        <div class="countdown-grid">
+          <div class="count-box">
+            <div id="count-days" class="count-num">00</div>
+            <div class="count-label">Days</div>
+          </div>
+          <div class="count-box">
+            <div id="count-hours" class="count-num">00</div>
+            <div class="count-label">Hours</div>
+          </div>
+          <div class="count-box">
+            <div id="count-mins" class="count-num">00</div>
+            <div class="count-label">Minutes</div>
+          </div>
+          <div class="count-box">
+            <div id="count-secs" class="count-num">00</div>
+            <div class="count-label">Seconds</div>
+          </div>
+        </div>
+
+        <!-- Fun Activity: Rapid-Fire Love Meter -->
+        <div style="margin-top: 8px; text-align: center;">
+          <button id="charge-love-btn" class="glow-btn-small">⚡ Rapid-Charge Love Meter: <span id="love-meter-pct">100%</span> ⚡</button>
+        </div>
+
+        <div class="fun-tool-bar" style="margin-top: 12px;">
+          <button id="fast-forward-btn" class="fun-action-btn">✨ Preview Midnight Celebration</button>
+        </div>
+
+        <div id="birthday-arrival-banner" class="birthday-arrival-banner hidden">
+          <p style="font-size: 1.25rem; font-weight: 700; color: var(--gold-light);">🎂 HAPPY BIRTHDAY, VEDANTI! 🎂</p>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 6px;">Today is the day the world was gifted with your radiant smile.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 3: DAY ONE (DEVELOPING POLAROID)
+         ==================================================================== -->
+    <section id="chapter-3" class="chapter-view">
+      <p class="chapter-subtitle">Where it all began</p>
+      <h2 class="chapter-heading">Day One: The First Spark</h2>
+
+      <div id="day-one-polaroid" class="polaroid-frame">
+        <div class="polaroid-img-wrapper">
+          <img id="polaroid-photo" class="polaroid-photo" src="assets/photos/p03_day_one_polaroid.jpeg" alt="Day One Selfie July 2023" loading="lazy">
+        </div>
+        <p class="polaroid-caption">July 2023 • Day One</p>
+      </div>
+
+      <p class="polaroid-hint">✨ Touch or hover over the polaroid to develop the memory ✨</p>
+
+      <!-- Fun Activity: Photo Sticker Stamps -->
+      <div class="fun-tool-bar" style="margin-top: 14px;">
+        <span style="font-size: 0.85rem; color: var(--rose-accent); align-self: center;">Add Stamps:</span>
+        <button class="stamp-tool-btn fun-action-btn" data-sticker="👑">👑 Queen</button>
+        <button class="stamp-tool-btn fun-action-btn" data-sticker="🥸">🥸 Mustache</button>
+        <button class="stamp-tool-btn fun-action-btn" data-sticker="😎">😎 Cool</button>
+        <button class="stamp-tool-btn fun-action-btn" data-sticker="💋">💋 Kisses</button>
+        <button class="stamp-tool-btn fun-action-btn" data-sticker="💖">💖 Hearts</button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 4: CHAPTERS IN TIME (MILESTONE TIMELINE)
+         ==================================================================== -->
+    <section id="chapter-4" class="chapter-view">
+      <p class="chapter-subtitle">Memories carved in gold</p>
+      <h2 class="chapter-heading">Chapters in Time</h2>
+
+      <div class="timeline-grid">
+        <div class="timeline-card">
+          <img class="timeline-photo" src="assets/photos/p04_timeline_traditional.jpeg" alt="Traditional festival celebration" loading="lazy">
+          <span class="timeline-tag">Festivals & Warmth</span>
+          <h3 class="timeline-card-title">Shy Smiles & Festive Colors</h3>
+          <p class="timeline-card-desc">Dressed up in traditional sarees, dancing under festive lights, and that shy laugh with your hand over your smile that stole my heart completely.</p>
+          <button class="confession-btn fun-action-btn" style="margin-top: 10px;">🤫 Reveal Secret Confession</button>
+        </div>
+
+        <div class="timeline-card">
+          <img class="timeline-photo" src="assets/photos/p04_timeline_vacation.jpeg" alt="Vacation getaways in white" loading="lazy">
+          <span class="timeline-tag">Getaways & Sunshine</span>
+          <h3 class="timeline-card-title">Matching in White</h3>
+          <p class="timeline-card-desc">Exploring new places, sharing hotel mirror selfies, laughing at silly inside jokes, and realizing every journey is paradise with you.</p>
+          <button class="confession-btn fun-action-btn" style="margin-top: 10px;">🤫 Reveal Secret Confession</button>
+        </div>
+      </div>
+
+      <div id="confession-toast" class="fun-toast-banner hidden" style="max-width: 520px;"></div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 5: HALL OF GIGGLE & GRACE (3D FLIP CARDS)
+         ==================================================================== -->
+    <section id="chapter-5" class="chapter-view">
+      <p class="chapter-subtitle">Because love is laughing together</p>
+      <h2 class="chapter-heading">Hall of Giggle & Grace</h2>
+
+      <div class="flip-cards-grid">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/photos/p05_candid_goggles.jpeg" alt="Finger goggles goofy video call" loading="lazy">
+              <span class="flip-card-label">The Finger Goggles 🕶️</span>
+            </div>
+            <div class="flip-card-back">
+              <h3>Pure Joy</h3>
+              <p>"Who else could turn a simple video call into comedy gold? Your silliness is my favorite medicine on stressful days."</p>
+              <span style="font-size: 0.8rem; color: var(--rose-accent); margin-top: 14px;">Tap to flip back ↺</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/photos/p05_candid_flex.jpeg" alt="Playful flex video call" loading="lazy">
+              <span class="flip-card-label">The Strongest Girl 💪</span>
+            </div>
+            <div class="flip-card-back">
+              <h3>Strength & Sunshine</h3>
+              <p>"Even with your busy schedule and work lanyard on, you hop on calls flexing playfully. Your energy lights up my whole world."</p>
+              <span style="font-size: 0.8rem; color: var(--rose-accent); margin-top: 14px;">Tap to flip back ↺</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fun Activity: Meme Soundboard -->
+      <div class="fun-tool-bar" style="margin-top: 18px;">
+        <span style="font-size: 0.85rem; color: var(--rose-accent); align-self: center;">Meme Soundboard:</span>
+        <button id="sfx-boing-btn" class="fun-action-btn">🔊 Cartoon Boing</button>
+        <button id="sfx-choir-btn" class="fun-action-btn">👼 Angelic Choir</button>
+        <button id="sfx-laugh-btn" class="fun-action-btn">😂 Laugh Burst</button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 6: OUR COORDINATES (MAP & ADVENTURES)
+         ==================================================================== -->
+    <section id="chapter-6" class="chapter-view">
+      <p class="chapter-subtitle">Every coordinate tells a tale</p>
+      <h2 class="chapter-heading">Our Coordinates</h2>
+
+      <div class="coordinates-grid">
+        <div class="coord-card">
+          <img src="assets/photos/p06_travel_hiking.jpeg" alt="Mountain trail hiking adventure" loading="lazy">
+          <span class="coord-stamp">📍 MOUNTAIN TRAIL • SKY VISTAS</span>
+          <h3 class="coord-title">Hiking to the Horizons</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 6px;">Walking rugged paths together under the open blue sky. With you, every climb feels easy and every view is breathtaking.</p>
+        </div>
+
+        <div class="coord-card">
+          <img src="assets/photos/p06_travel_chai.jpeg" alt="Golden hour cutting chai" loading="lazy">
+          <span class="coord-stamp">📍 GOLDEN HOUR • STREET CHAI</span>
+          <h3 class="coord-title">The Cutting Chai Ritual</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 6px;">Hot chai in hand, golden sunflare in your hair, glasses perched, and that signature thumbs-up. The simplest dates are the greatest.</p>
+        </div>
+      </div>
+
+      <!-- Fun Activity: Stats Calculator -->
+      <div style="margin-top: 18px; text-align: center;">
+        <button id="calc-stats-btn" class="glow-btn-small">📊 Calculate Our Relationship Stats 📊</button>
+      </div>
+      <div id="relationship-stats-box" class="fun-toast-banner hidden" style="max-width: 540px;"></div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 7: THE BIRTHDAY FORTUNE WHEEL & LOVE VOUCHERS
+         ==================================================================== -->
+    <section id="chapter-7" class="chapter-view">
+      <p class="chapter-subtitle">Official Boyfriend Vouchers For You</p>
+      <h2 class="chapter-heading">The Birthday Fortune Wheel</h2>
+
+      <div class="fortune-scene">
+        <div class="wheel-container">
+          <div class="wheel-pointer"></div>
+          <canvas id="wheel-canvas"></canvas>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+          <button id="spin-wheel-btn" class="glow-btn">🎡 SPIN THE WHEEL 🎡</button>
+          <button id="rig-wheel-btn" class="fun-action-btn">😈 Rig Wheel: Queen for the Day!</button>
+        </div>
+
+        <!-- Winning Voucher Modal/Card -->
+        <div id="voucher-result-card" class="voucher-card hidden">
+          <div class="voucher-badge">👑 OFFICIAL BIRTHDAY VOUCHER 👑</div>
+          <h3 id="voucher-title" class="voucher-title">Voucher Title</h3>
+          <p id="voucher-desc" class="voucher-desc">Voucher details</p>
+          <button id="claim-voucher-btn" class="glow-btn-small">Stamp & Claim Voucher 💌</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 8: LOVERS' TRIVIA CHALLENGE
+         ==================================================================== -->
+    <section id="chapter-8" class="chapter-view">
+      <p class="chapter-subtitle">How well do you remember?</p>
+      <h2 class="chapter-heading">Lovers' Trivia Challenge</h2>
+
+      <div class="trivia-wrapper">
+        <img class="trivia-banner-img" src="assets/photos/p08_trivia_banner.jpeg" alt="Playful couple quiz master" loading="lazy">
+        <div id="trivia-container"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 9: JAR OF 100 LITTLE REASONS (FULL 100 QUOTES)
+         ==================================================================== -->
+    <section id="chapter-9" class="chapter-view">
+      <p class="chapter-subtitle">Countless things I adore about you</p>
+      <h2 class="chapter-heading">The Jar of 100 Little Reasons</h2>
+
+      <div class="reasons-scene">
+        <img class="reasons-portrait" src="assets/photos/p09_reasons_flower.jpeg" alt="Vedanti with flower in hair" loading="lazy">
+        
+        <div id="magic-mason-jar" class="magic-jar-wrapper">
+          <div class="jar-lid"></div>
+          <div class="jar-glow-hearts">💖</div>
+        </div>
+
+        <p id="reasons-unlocked-count" style="font-size: 0.95rem; color: var(--gold-light); margin-top: 14px; font-weight: 700;">0 / 100 Reasons Unlocked</p>
+        
+        <div class="fun-tool-bar" style="margin-top: 8px;">
+          <button id="random-cannon-btn" class="glow-btn-small">🎲 Shoot Random Reason Cannon!</button>
+        </div>
+      </div>
+
+      <!-- Note Card Modal -->
+      <div id="reason-note-card" class="reason-note-card hidden">
+        <div id="reason-note-index" style="font-size: 0.85rem; font-weight: 700; color: #8b0000; text-transform: uppercase; margin-bottom: 8px;">Reason #1 of 100 💖</div>
+        <p id="reason-note-text">"Reason goes here"</p>
+        <div style="display: flex; gap: 8px; justify-content: center;">
+          <button id="next-note-btn" class="glow-btn-small">Next Reason →</button>
+          <button id="close-note-btn" class="fun-action-btn">Close ✕</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 10: 3-ZONE LOVE LOTTERY & SCRATCH CARD
+         ==================================================================== -->
+    <section id="chapter-10" class="chapter-view">
+      <p class="chapter-subtitle">Scratch all 3 zones to win your prize</p>
+      <h2 class="chapter-heading">The 3-Zone Love Lottery</h2>
+
+      <div class="scratch-card-wrapper">
+        <img class="scratch-under-photo" src="assets/photos/p10_scratch_kiss.jpeg" alt="Romantic kiss on cheek" loading="lazy">
+        <canvas id="scratch-canvas"></canvas>
+      </div>
+
+      <!-- Scratch Tool Selector & Shortcut -->
+      <div class="fun-tool-bar" style="margin-top: 14px;">
+        <span style="font-size: 0.85rem; color: var(--rose-accent); align-self: center;">Scratcher Tool:</span>
+        <button class="scratch-tool-btn fun-action-btn active" data-tool="coin">🪙 Gold Coin</button>
+        <button class="scratch-tool-btn fun-action-btn" data-tool="wand">🪄 Magic Wand</button>
+        <button class="scratch-tool-btn fun-action-btn" data-tool="paw">🐾 Cat Paw</button>
+        <button id="scratch-magic-clear-btn" class="glow-btn-small">✨ Scratch All with Magic!</button>
+      </div>
+
+      <div id="scratch-jackpot-banner" class="fun-toast-banner hidden" style="max-width: 420px;">
+        <p style="font-size: 1.15rem; font-weight: 700; color: var(--gold-light);">🎉 JACKPOT WINNER! 🎉</p>
+        <p style="margin-top: 4px;">You won 1 Lifetime Boyfriend with infinite love, hugs, and snacks!</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 11: WRITTEN IN THE STARS (COSMIC STARGAZER)
+         ==================================================================== -->
+    <section id="chapter-11" class="chapter-view">
+      <p class="chapter-subtitle">November 14th Zodiac • Scorpio</p>
+      <h2 class="chapter-heading">Written in the Stars</h2>
+
+      <div class="constellation-wrapper">
+        <canvas id="constellation-canvas"></canvas>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 10px;">Connect the stars of Scorpio to illuminate our celestial bond ✨</p>
+
+      <!-- Fun Activity: Shooting Star Wish Cannon & Horoscope -->
+      <div class="fun-tool-bar" style="margin-top: 12px;">
+        <button id="wish-cannon-btn" class="glow-btn-small">🌠 Launch Shooting Star Wish!</button>
+        <button id="horoscope-btn" class="fun-action-btn">🔮 Scorpio Love Horoscope</button>
+      </div>
+      <div id="horoscope-banner" class="fun-toast-banner hidden" style="max-width: 480px;"></div>
+
+      <div id="constellation-reveal" class="constellation-reveal-box hidden">
+        <img src="assets/photos/p11_stars_gaze.jpeg" alt="Gazing into eyes under starry night" loading="lazy">
+        <p style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--gold-light); margin-top: 14px;">"Out of 8 billion people, under billions of stars, the universe led me right to you."</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 12: OUR FUTURE BUCKET LIST
+         ==================================================================== -->
+    <section id="chapter-12" class="chapter-view">
+      <p class="chapter-subtitle">All the tomorrows by your side</p>
+      <h2 class="chapter-heading">Our Future Bucket List</h2>
+
+      <div class="bucket-scene">
+        <img class="bucket-side-photo" src="assets/photos/p12_bucketlist_hug.jpeg" alt="Warm hug from behind" loading="lazy">
+        <div class="bucket-list-card">
+          <div id="bucket-list-items"></div>
+          <div class="new-bucket-box">
+            <input id="new-bucket-input" type="text" placeholder="Add our next dream wish...">
+            <button id="add-bucket-btn" class="glow-btn-small">Add Wish +</button>
+          </div>
+          <div style="margin-top: 12px; text-align: center;">
+            <button id="crazy-date-btn" class="fun-action-btn">🎲 Generate Crazy Date Idea</button>
+          </div>
+          <div id="crazy-date-toast" class="fun-toast-banner hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 13: VIRTUAL CAKE & BLOWABLE CANDLES
+         ==================================================================== -->
+    <section id="chapter-13" class="chapter-view">
+      <p class="chapter-subtitle">Make your deepest wish</p>
+      <h2 class="chapter-heading">Virtual Cake & Candles</h2>
+
+      <div class="cake-scene">
+        <div class="cake-body">
+          <div class="cake-candle"><div class="candle-flame"></div></div>
+          <div class="cake-candle"><div class="candle-flame"></div></div>
+          <div class="cake-candle"><div class="candle-flame"></div></div>
+          <div class="cake-candle"><div class="candle-flame"></div></div>
+          <div class="cake-candle"><div class="candle-flame"></div></div>
+        </div>
+
+        <div class="fun-tool-bar" style="margin-top: 26px;">
+          <button id="mic-blow-btn" class="glow-btn-small">🎙️ Blow Mic (or Tap Candles)</button>
+          <button id="party-horn-btn" class="fun-action-btn">📯 Blow Party Horn!</button>
+          <button id="taste-cake-btn" class="fun-action-btn">🍰 Taste Virtual Cake</button>
+        </div>
+        <div id="taste-cake-toast" class="fun-toast-banner hidden" style="max-width: 420px;"></div>
+
+        <div id="cake-celebration-banner" class="cake-celebration-banner hidden">
+          <p style="font-size: 1.6rem; font-family: var(--font-serif); color: var(--gold-light);">🎉 WISH GRANTED! HAPPY BIRTHDAY! 🎉</p>
+          <img class="cake-queen-photo" src="assets/photos/p13_cake_queen.jpeg" alt="Vedanti looking like a queen in magenta saree" loading="lazy">
+          <p style="font-size: 0.95rem; color: var(--rose-accent); margin-top: 10px;">May every dream you hold close to your heart come true this year.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CHAPTER 14: THE ROYAL VAULT & LETTER (GRAND FINALE)
+         ==================================================================== -->
+    <section id="chapter-14" class="chapter-view">
+      <p class="chapter-subtitle">One final secret remains</p>
+      <h2 class="chapter-heading">The Royal Vault & Letter</h2>
+
+      <div class="vault-scene">
+        <div class="vault-box-container">
+          <div id="vault-ribbon" class="vault-ribbon">🎀 Pull Ribbon to Unbox</div>
+          
+          <div id="vault-inside" class="vault-inside hidden">
+            <img class="vault-photo-frame" src="assets/photos/p14_vault_regal.jpeg" alt="Festive royal couple portrait" loading="lazy">
+            <button id="wax-seal-btn" class="wax-seal-btn">Break Wax Seal 💌</button>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; justify-content: center;">
+          <button id="open-video-reel-btn" class="glow-btn-small">🎬 Watch Living Moments Reel</button>
+          <button id="download-cert-btn" class="fun-action-btn">📜 Boyfriend Guarantee Certificate</button>
+          <button id="replay-journey-btn" class="fun-action-btn">↺ Replay The Journey</button>
+        </div>
+      </div>
+
+      <!-- Letter Modal -->
+      <div id="letter-modal" class="modal-overlay hidden">
+        <div class="letter-paper">
+          <div id="letter-body"></div>
+          <div style="text-align: center; margin-top: 24px;">
+            <button id="close-letter-btn" class="glow-btn">Keep Letter In My Heart ❤️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Living Video Reel Modal -->
+      <div id="video-modal" class="modal-overlay hidden">
+        <div class="video-player-container">
+          <video id="reel-active-video" src="assets/videos/clip1.mp4" controls autoplay loop playsinline></video>
+          <div class="reel-thumbs-bar">
+            <button class="reel-thumb active" data-src="assets/videos/clip1.mp4">Clip 1</button>
+            <button class="reel-thumb" data-src="assets/videos/clip2.mp4">Clip 2</button>
+            <button class="reel-thumb" data-src="assets/videos/clip3.mp4">Clip 3</button>
+            <button class="reel-thumb" data-src="assets/videos/clip4.mp4">Clip 4</button>
+          </div>
+          <button id="close-video-btn" class="glow-btn-small" style="margin-top: 14px;">Close Cinema Reel ✕</button>
+        </div>
+      </div>
+
+      <!-- Boyfriend Guarantee Certificate Modal -->
+      <div id="cert-modal" class="modal-overlay hidden">
+        <div class="letter-paper" style="text-align: center; border: 3px double var(--gold-primary);">
+          <div style="font-size: 2.2rem; margin-bottom: 8px;">📜 👑 📜</div>
+          <h2 style="font-family: var(--font-serif); color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 6px;">OFFICIAL BOYFRIEND WARRANTY & GUARANTEE</h2>
+          <p style="font-size: 0.85rem; color: var(--rose-accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Issued to: Vedanti • Serial #VEDANTI-1411-FOREVER</p>
+          <p style="font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 14px;">
+            This certifies that <strong>Vedanti</strong> is legally entitled to unlimited lifelong affection, mandatory comfort hugs during stressful days, priority cutting chai dates, and dessert tax exemptions.
+          </p>
+          <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px;">
+            Warranty Expiration: <strong>Never (Valid across all universes and lifetimes)</strong>
+          </p>
+          <button id="close-cert-btn" class="glow-btn">Claim Lifetime Warranty ❤️</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Persistent Bottom Navigation -->
+  <footer class="nav-bottom-bar">
+    <button id="nav-prev" class="nav-btn" aria-label="Previous Chapter">← Previous</button>
+    <span class="swipe-hint">Swipe or use arrow keys ← →</span>
+    <button id="nav-next" class="nav-btn primary" aria-label="Next Chapter">Next Chapter →</button>
+  </footer>
+
+  <!-- Modular Scripts -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

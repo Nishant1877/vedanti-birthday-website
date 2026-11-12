@@ -1,0 +1,1155 @@
+/* ==========================================================================
+   🎨 CHAPTER COMPONENTS STYLESHEET (OPTIMIZED: ZERO FACE CROPPING)
+   Vedanti's 14 Interactive Chapters
+   ========================================================================== */
+
+/* Universal Image Safeguard: Ensure no faces are clipped */
+img {
+  image-rendering: auto;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 1: THE MYSTERIOUS INVITATION (KEYHOLE)
+   -------------------------------------------------------------------------- */
+.keyhole-door {
+  position: relative;
+  width: min(320px, 92vw);
+  max-width: 320px;
+  height: auto;
+  min-height: 420px;
+  background: radial-gradient(circle, #1a0f19 0%, #0d0a11 100%);
+  border: 2px solid var(--glass-border);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(243, 208, 130, 0.1);
+  margin-top: 6px;
+  padding: 18px 14px;
+}
+
+.keyhole-peep {
+  position: relative;
+  width: min(145px, 38vw);
+  height: min(145px, 38vw);
+  border-radius: 50%;
+  border: 3px solid var(--gold-primary);
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(243, 208, 130, 0.4);
+  margin-bottom: 18px;
+  background: #000;
+}
+
+.keyhole-peep img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%; /* Keep face visible */
+  filter: blur(4px) brightness(0.7);
+  transition: filter 0.8s ease;
+}
+
+.keyhole-aperture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 56px;
+  background: var(--bg-midnight);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 40%, 65% 55%, 65% 100%, 35% 100%, 35% 55%, 0% 40%);
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 0 15px rgba(243, 208, 130, 0.6);
+}
+
+.golden-key {
+  cursor: pointer;
+  background: rgba(243, 208, 130, 0.15);
+  border: 2px solid var(--gold-primary);
+  padding: 11px 20px;
+  border-radius: 30px;
+  font-size: clamp(0.92rem, 3.5vw, 1.05rem);
+  font-weight: 700;
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: pulseGlow 2.5s infinite;
+  transition: transform 0.3s ease;
+  touch-action: manipulation;
+}
+
+.golden-key:hover {
+  transform: scale(1.05);
+}
+
+.golden-key:active {
+  transform: scale(0.96);
+}
+
+.keyhole-reveal-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-midnight);
+  border-radius: 24px;
+  border: 2px solid var(--gold-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  text-align: center;
+}
+
+.keyhole-reveal-card img {
+  width: auto;
+  max-width: min(220px, 80%);
+  height: min(260px, 42vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  border: 2px solid var(--gold-primary);
+  margin-bottom: 10px;
+  box-shadow: 0 8px 30px rgba(243, 208, 130, 0.3);
+}
+
+.reveal-message {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 3.4vw, 1.1rem);
+  color: var(--gold-light);
+  margin-bottom: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 2: THE COSMIC COUNTDOWN
+   -------------------------------------------------------------------------- */
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.countdown-banner-photo {
+  width: auto;
+  max-width: min(260px, 78vw);
+  height: min(300px, 38vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(243, 208, 130, 0.2);
+  margin-bottom: 16px;
+}
+
+.countdown-grid {
+  display: flex;
+  gap: min(10px, 2.5vw);
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 360px;
+  justify-content: center;
+}
+
+.count-box {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  padding: 10px 6px;
+  border-radius: 14px;
+  min-width: 0;
+  flex: 1;
+  max-width: 80px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.count-num {
+  font-size: clamp(1.4rem, 6vw, 2.1rem);
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.count-label {
+  font-size: clamp(0.65rem, 2.2vw, 0.75rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--rose-accent);
+  margin-top: 4px;
+}
+
+.birthday-arrival-banner {
+  background: linear-gradient(135deg, rgba(243, 208, 130, 0.2), rgba(224, 168, 153, 0.2));
+  border: 2px solid var(--gold-primary);
+  border-radius: 18px;
+  padding: 14px 18px;
+  text-align: center;
+  margin-top: 14px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 3: DAY ONE (DEVELOPING POLAROID - LANDSCAPE FIT)
+   -------------------------------------------------------------------------- */
+.polaroid-frame {
+  background: #FDFBF7;
+  padding: 10px 10px 24px;
+  border-radius: 8px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.7), 0 2px 10px rgba(243, 208, 130, 0.2);
+  width: min(420px, 92vw);
+  max-width: 420px;
+  cursor: pointer;
+  transform: rotate(-1.5deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.polaroid-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 0 20px 50px rgba(243, 208, 130, 0.35);
+}
+
+.polaroid-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 42vh;
+  background: #111;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.polaroid-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0d0a11;
+  filter: blur(14px) brightness(0.25) sepia(0.8);
+  opacity: 0.35;
+  transition: filter 1.6s ease-in-out, opacity 1.6s ease-in-out;
+}
+
+.polaroid-photo.developed {
+  filter: blur(0px) brightness(1) sepia(0.08);
+  opacity: 1;
+}
+
+.polaroid-caption {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.2rem, 4.8vw, 1.6rem);
+  color: #2b1f1d;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.polaroid-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 4: CHAPTERS IN TIME (MILESTONE TIMELINE)
+   -------------------------------------------------------------------------- */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.timeline-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 14px;
+  transition: var(--transition-smooth);
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-gold);
+}
+
+.timeline-photo {
+  width: 100%;
+  height: min(260px, 36vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.timeline-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  background: rgba(243, 208, 130, 0.15);
+  color: var(--gold-primary);
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.timeline-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 4vw, 1.25rem);
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.timeline-card-desc {
+  font-size: clamp(0.82rem, 3.2vw, 0.88rem);
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 5: HALL OF GIGGLE & GRACE (CANDIDS WITH UNCLIPPED SCREENS)
+   -------------------------------------------------------------------------- */
+.flip-cards-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: min(290px, 90vw);
+  height: min(430px, 60vh);
+  perspective: 1000px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flip-card-front {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: calc(100% - 32px);
+  object-fit: contain; /* Full phone screen & PiP visible */
+  background: #000;
+  border-radius: 12px;
+}
+
+.flip-card-label {
+  font-weight: 600;
+  color: var(--gold-light);
+  font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+  margin-top: 6px;
+}
+
+.flip-card-back {
+  background: radial-gradient(circle, #2d1624 0%, #150a11 100%);
+  border-color: var(--rose-accent);
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
+  padding: 18px 14px;
+}
+
+.flip-card-back h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 4.5vw, 1.45rem);
+  color: var(--gold-primary);
+  margin-bottom: 10px;
+}
+
+.flip-card-back p {
+  font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 6: OUR COORDINATES (MAP & POSTCARDS)
+   -------------------------------------------------------------------------- */
+.coordinates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.coord-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.coord-card img {
+  width: 100%;
+  height: min(260px, 36vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.coord-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 4vw, 1.25rem);
+  color: var(--gold-light);
+}
+
+.coord-stamp {
+  font-size: 0.74rem;
+  color: var(--rose-accent);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 7: THE BIRTHDAY FORTUNE WHEEL & LOVE VOUCHERS
+   -------------------------------------------------------------------------- */
+.fortune-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.wheel-container {
+  position: relative;
+  width: min(320px, 84vw);
+  height: min(320px, 84vw);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#wheel-canvas {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 26px solid #FFD700;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
+  z-index: 10;
+}
+
+.voucher-card {
+  background: radial-gradient(circle, #2d1624 0%, #150a11 100%);
+  border: 2px solid var(--gold-primary);
+  border-radius: 18px;
+  padding: 18px 14px;
+  max-width: 380px;
+  width: 95%;
+  text-align: center;
+  margin-top: 14px;
+  box-shadow: 0 10px 40px rgba(243, 208, 130, 0.25);
+}
+
+.voucher-badge {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-primary);
+  margin-bottom: 6px;
+}
+
+.voucher-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.voucher-desc {
+  font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+  color: var(--text-light);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 8: LOVERS' TRIVIA CHALLENGE
+   -------------------------------------------------------------------------- */
+.trivia-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+.trivia-banner-img {
+  width: 100%;
+  max-height: min(250px, 32vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 14px;
+}
+
+.trivia-question-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 18px;
+  padding: 16px 14px;
+}
+
+.trivia-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+}
+
+.trivia-pill {
+  color: var(--gold-primary);
+}
+
+.trivia-question-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 4.2vw, 1.35rem);
+  color: var(--gold-light);
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+.trivia-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trivia-opt-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: clamp(0.84rem, 3.2vw, 0.92rem);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+.trivia-opt-btn:hover:not(:disabled) {
+  background: rgba(243, 208, 130, 0.18);
+  border-color: var(--gold-primary);
+}
+
+.trivia-opt-btn:active {
+  transform: scale(0.98);
+}
+
+.trivia-opt-btn.correct {
+  background: rgba(46, 204, 113, 0.25);
+  border-color: #2ecc71;
+  color: #fff;
+}
+
+.trivia-opt-btn.incorrect {
+  background: rgba(231, 76, 60, 0.25);
+  border-color: #e74c3c;
+  color: #fff;
+}
+
+.trivia-feedback {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.trivia-result-card {
+  background: radial-gradient(circle, #2d1624 0%, #150a11 100%);
+  border: 2px solid var(--gold-primary);
+  border-radius: 20px;
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.result-badge {
+  font-size: 0.92rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.result-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+.result-score {
+  font-size: clamp(1.05rem, 4vw, 1.2rem);
+  color: var(--rose-accent);
+  margin-bottom: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 9: JAR OF 100 LITTLE REASONS
+   -------------------------------------------------------------------------- */
+.reasons-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reasons-portrait {
+  width: auto;
+  max-width: min(220px, 64vw);
+  height: min(270px, 34vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 16px;
+}
+
+.magic-jar-wrapper {
+  cursor: pointer;
+  width: min(130px, 35vw);
+  height: min(175px, 24vh);
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border: 3px solid rgba(243, 208, 130, 0.4);
+  border-radius: 20px 20px 30px 30px;
+  box-shadow: 0 0 30px rgba(243, 208, 130, 0.25), inset 0 0 20px rgba(243, 208, 130, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  touch-action: manipulation;
+}
+
+.magic-jar-wrapper:hover {
+  transform: scale(1.04);
+}
+
+.magic-jar-wrapper:active {
+  transform: scale(0.96);
+}
+
+.jar-lid {
+  position: absolute;
+  top: -14px;
+  width: 100px;
+  height: 18px;
+  background: #AA771C;
+  border-radius: 6px;
+  border: 2px solid var(--gold-primary);
+}
+
+.jar-glow-hearts {
+  font-size: 2.2rem;
+  animation: pulseGlow 2s infinite;
+}
+
+.reason-note-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFFDF9;
+  color: #2b1f1d;
+  border-radius: 20px;
+  padding: 24px 18px;
+  max-width: 380px;
+  width: min(380px, 92vw);
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(243, 208, 130, 0.4);
+  z-index: 100;
+  text-align: center;
+}
+
+.reason-note-card p {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.25rem, 4.5vw, 1.7rem);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 10: SCRATCH TO REVEAL (NO CUT FACES)
+   -------------------------------------------------------------------------- */
+.scratch-card-wrapper {
+  position: relative;
+  width: min(310px, 88vw);
+  max-width: 310px;
+  aspect-ratio: 310 / 420;
+  height: auto;
+  max-height: min(420px, 56vh);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--gold-primary);
+  background: #000;
+  touch-action: none; /* Smooth mobile scratching without scrolling */
+}
+
+.scratch-under-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0d0a11;
+}
+
+#scratch-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 11: WRITTEN IN THE STARS (CONSTELLATION)
+   -------------------------------------------------------------------------- */
+.constellation-wrapper {
+  position: relative;
+  width: min(330px, 88vw);
+  max-width: 330px;
+  height: min(330px, 48vh);
+  background: radial-gradient(circle, #101426 0%, #080a13 100%);
+  border: 2px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  touch-action: none;
+}
+
+#constellation-canvas {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.constellation-reveal-box {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.constellation-reveal-box img {
+  width: auto;
+  max-width: min(250px, 72vw);
+  height: min(280px, 36vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 18px;
+  border: 3px solid var(--gold-primary);
+  box-shadow: 0 0 30px rgba(243, 208, 130, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 12: FUTURE BUCKET LIST
+   -------------------------------------------------------------------------- */
+.bucket-scene {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 760px;
+}
+
+.bucket-side-photo {
+  width: auto;
+  max-width: min(240px, 70vw);
+  height: min(280px, 34vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+}
+
+.bucket-list-card {
+  flex: 1;
+  min-width: min(280px, 100%);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 18px;
+  padding: 16px 14px;
+}
+
+.bucket-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  touch-action: manipulation;
+}
+
+.bucket-item.checked .bucket-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.bucket-text {
+  font-size: clamp(0.85rem, 3.2vw, 0.95rem);
+}
+
+.bucket-checkbox {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: 2px solid var(--gold-primary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--gold-primary);
+}
+
+.new-bucket-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.new-bucket-box input {
+  flex: 1;
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 0.86rem;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 13: VIRTUAL CAKE & BLOWABLE CANDLES
+   -------------------------------------------------------------------------- */
+.cake-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cake-body {
+  position: relative;
+  width: min(230px, 72vw);
+  height: 105px;
+  background: linear-gradient(180deg, #FDF7ED 0%, #E8D3B9 100%);
+  border-radius: 20px 20px 10px 10px;
+  border: 3px solid var(--gold-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8px;
+  margin-top: 42px;
+}
+
+.cake-candle {
+  cursor: pointer;
+  position: relative;
+  width: 12px;
+  height: 44px;
+  background: repeating-linear-gradient(45deg, #FF69B4, #FF69B4 6px, #FFF 6px, #FFF 12px);
+  border-radius: 4px;
+  top: -44px;
+  touch-action: manipulation;
+}
+
+.candle-flame {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 22px;
+  background: radial-gradient(circle at 50% 80%, #FFA500 0%, #FF4500 60%, transparent 100%);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 15px #FFA500;
+  animation: flameFlicker 0.4s infinite alternate;
+}
+
+.cake-candle.extinguished .candle-flame {
+  display: none;
+}
+
+.cake-celebration-banner {
+  background: radial-gradient(circle, #2d1624 0%, #150a11 100%);
+  border: 2px solid var(--gold-primary);
+  border-radius: 18px;
+  padding: 18px 14px;
+  text-align: center;
+  margin-top: 18px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.cake-queen-photo {
+  width: auto;
+  max-width: min(230px, 68vw);
+  height: min(290px, 38vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  border: 2px solid var(--gold-primary);
+  margin-top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   CHAPTER 14: THE ROYAL VAULT & LETTER
+   -------------------------------------------------------------------------- */
+.vault-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vault-box-container {
+  position: relative;
+  width: min(300px, 88vw);
+  max-width: 300px;
+  height: min(370px, 52vh);
+  background: #251221;
+  border: 2px solid var(--gold-primary);
+  border-radius: 24px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.vault-ribbon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: #1a0e14;
+  padding: 11px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: clamp(0.92rem, 3.5vw, 1.05rem);
+  box-shadow: 0 4px 25px rgba(243, 208, 130, 0.6);
+  z-index: 5;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  white-space: nowrap;
+}
+
+.vault-inside {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.vault-photo-frame {
+  width: auto;
+  max-width: min(190px, 58vw);
+  height: min(240px, 34vh);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 14px;
+  border: 3px solid var(--gold-primary);
+  box-shadow: 0 8px 30px rgba(243, 208, 130, 0.4);
+}
+
+.wax-seal-btn {
+  background: #8b0000;
+  border: 2px solid var(--gold-primary);
+  color: #FFF;
+  padding: 9px 20px;
+  border-radius: 24px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.6);
+  transition: var(--transition-smooth);
+  touch-action: manipulation;
+}
+
+.wax-seal-btn:hover {
+  transform: scale(1.05);
+}
+
+.wax-seal-btn:active {
+  transform: scale(0.96);
+}
+
+/* Modal Windows (Phone-Optimized Overlay & Paper) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(12px, env(safe-area-inset-top, 12px)) max(12px, env(safe-area-inset-right, 12px)) max(12px, env(safe-area-inset-bottom, 12px)) max(12px, env(safe-area-inset-left, 12px));
+}
+
+.letter-paper {
+  background: #FFFDF8;
+  color: #2b1f1d;
+  width: 100%;
+  max-width: 580px;
+  max-height: 82vh;
+  max-height: 82dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 18px;
+  padding: clamp(18px, 5vw, 32px) clamp(14px, 4vw, 26px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--gold-primary);
+}
+
+.letter-salutation {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: #8b0000;
+  margin-bottom: 12px;
+}
+
+.letter-para {
+  font-family: var(--font-serif);
+  font-size: clamp(0.92rem, 3.4vw, 1.05rem);
+  line-height: 1.65;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.letter-signoff {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin-top: 16px;
+}
+
+.letter-signature {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.4rem, 4.8vw, 1.8rem);
+  color: #8b0000;
+}
+
+.video-player-container {
+  background: #111;
+  border-radius: 18px;
+  border: 2px solid var(--gold-primary);
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  max-height: 85vh;
+  max-height: 85dvh;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-player-container video {
+  width: 100%;
+  max-height: min(340px, 44vh);
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.reel-thumbs-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reel-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  min-height: 34px;
+  touch-action: manipulation;
+}
+
+.reel-thumb.active {
+  background: var(--gold-primary);
+  color: #111;
+  font-weight: bold;
+}

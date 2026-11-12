@@ -1,0 +1,480 @@
+/* ==========================================================================
+   ✨ MASTER THEME STYLESHEET (PERFORMANCE OPTIMIZED: ZERO LAG)
+   Vedanti's 14th November Birthday Journey
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-midnight: #0E1118;
+  --bg-wine: #23101E;
+  --gold-primary: #F3D082;
+  --gold-dark: #D4AF37;
+  --gold-light: #FFF8DC;
+  --rose-accent: #E0A899;
+  --text-light: #FBF8F5;
+  --text-muted: rgba(251, 248, 245, 0.75);
+  --glass-bg: rgba(22, 17, 26, 0.85); /* Solid semi-transparent background for extreme smoothness */
+  --glass-border: rgba(243, 208, 130, 0.3);
+  --glass-blur: blur(6px); /* Lightweight blur, zero GPU lag */
+  --shadow-gold: 0 6px 24px rgba(243, 208, 130, 0.15);
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-handwriting: 'Dancing Script', cursive;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-midnight);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+/* Background Atmosphere */
+#star-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+}
+
+.aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 15%, rgba(38, 18, 33, 0.85) 0%, rgba(14, 17, 24, 0.96) 65%, #08090D 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Persistent Header (Notch / Dynamic Island Safe) */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: max(10px, env(safe-area-inset-top, 10px));
+  padding-bottom: 10px;
+  padding-left: max(14px, env(safe-area-inset-left, 14px));
+  padding-right: max(14px, env(safe-area-inset-right, 14px));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  background: rgba(14, 17, 24, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(243, 208, 130, 0.15);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.birthday-badge {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+}
+
+.chapter-title-pill {
+  font-size: 0.82rem;
+  padding: 4px 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  color: var(--rose-accent);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.chapter-counter {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+.audio-btn {
+  background: rgba(243, 208, 130, 0.15);
+  border: 1px solid var(--glass-border);
+  color: var(--gold-primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.audio-btn:hover {
+  background: rgba(243, 208, 130, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Persistent Progress Bar */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 60;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-primary), var(--rose-accent));
+  box-shadow: 0 0 8px var(--gold-primary);
+  transition: width 0.35s ease;
+}
+
+/* App Main Container (Responsive & Safe-Area Aware) */
+#app {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for iOS/Android address bars */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: calc(54px + env(safe-area-inset-top, 10px));
+  padding-bottom: calc(64px + env(safe-area-inset-bottom, 12px));
+  padding-left: max(12px, env(safe-area-inset-left, 12px));
+  padding-right: max(12px, env(safe-area-inset-right, 12px));
+  width: 100%;
+}
+
+/* Chapter View */
+.chapter-view {
+  display: none;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateZ(0);
+  will-change: opacity, transform;
+}
+
+.chapter-view.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  animation: fadeInFast 0.35s ease-out forwards;
+}
+
+@keyframes fadeInFast {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chapter Typography (Fluid Scaling) */
+.chapter-subtitle {
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: var(--rose-accent);
+  margin-bottom: 4px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.chapter-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 5.5vw, 2.3rem);
+  color: var(--gold-light);
+  text-align: center;
+  margin-bottom: 18px;
+  line-height: 1.25;
+  padding: 0 4px;
+}
+
+/* Navigation Controls (Bottom Bar - Safe Area Aware) */
+.nav-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
+  padding-left: max(12px, env(safe-area-inset-left, 12px));
+  padding-right: max(12px, env(safe-area-inset-right, 12px));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  background: rgba(14, 17, 24, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(243, 208, 130, 0.15);
+}
+
+.nav-btn {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-light);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+  touch-action: manipulation;
+}
+
+.nav-btn:active {
+  transform: scale(0.96);
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: rgba(243, 208, 130, 0.25);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+}
+
+.nav-btn.primary {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: #1a0e14;
+  border: none;
+}
+
+.nav-btn.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #FFF8DC, var(--gold-primary));
+  box-shadow: 0 0 16px rgba(243, 208, 130, 0.4);
+}
+
+.swipe-hint {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+/* Generic Glow Buttons (Mobile Touch Friendly) */
+.glow-btn {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: #1a0e14;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(243, 208, 130, 0.3);
+  min-height: 42px;
+  touch-action: manipulation;
+}
+
+.glow-btn:active {
+  transform: scale(0.96);
+}
+
+.glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(243, 208, 130, 0.5);
+}
+
+.glow-btn-small {
+  background: rgba(243, 208, 130, 0.18);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  min-height: 38px;
+  touch-action: manipulation;
+}
+
+.glow-btn-small:active {
+  transform: scale(0.96);
+}
+
+.glow-btn-small:hover {
+  background: var(--gold-primary);
+  color: #1a0e14;
+}
+
+/* Fun Activity Pills & Widgets */
+.fun-tool-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.fun-action-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition-smooth);
+  min-height: 36px;
+  touch-action: manipulation;
+}
+
+.fun-action-btn:active {
+  transform: scale(0.96);
+}
+
+.fun-action-btn:hover {
+  background: rgba(243, 208, 130, 0.25);
+  border-color: var(--gold-primary);
+}
+
+.fun-toast-banner {
+  background: linear-gradient(135deg, #2D1424, #1B0C18);
+  border: 1px solid var(--gold-primary);
+  border-radius: 14px;
+  padding: 10px 14px;
+  color: var(--text-light);
+  font-size: 0.86rem;
+  text-align: center;
+  margin-top: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 480px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ==========================================================================
+   📱 COMPREHENSIVE PHONE OPTIMIZATION SUITE
+   Supports all screens: 320px, 360px, 375px, 390px, 414px, 430px+
+   ========================================================================== */
+
+/* Standard Phones (<= 600px) */
+@media (max-width: 600px) {
+  .chapter-title-pill {
+    display: none;
+  }
+  .swipe-hint {
+    display: none;
+  }
+  .header-left {
+    gap: 6px;
+  }
+  .birthday-badge {
+    font-size: 0.88rem;
+  }
+  .chapter-counter {
+    font-size: 0.84rem;
+  }
+  .audio-btn {
+    padding: 5px 10px;
+    font-size: 0.78rem;
+  }
+  .nav-btn {
+    padding: 7px 12px;
+    font-size: 0.82rem;
+  }
+}
+
+/* Compact Phones (<= 390px - iPhone 12/13/14/15 mini, Galaxy S) */
+@media (max-width: 390px) {
+  #app {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .nav-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+  .birthday-badge {
+    font-size: 0.82rem;
+  }
+  .audio-btn {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+  .fun-action-btn {
+    font-size: 0.76rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Ultra-Compact Phones (<= 360px - Galaxy Fold outer, iPhone SE 1st gen) */
+@media (max-width: 360px) {
+  .chapter-heading {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .chapter-subtitle {
+    font-size: 1.1rem;
+  }
+  .nav-btn {
+    padding: 5px 8px;
+    font-size: 0.74rem;
+  }
+}
+
+/* Landscape Mode on Phones (Height <= 500px) */
+@media (max-height: 500px) and (orientation: landscape) {
+  #app {
+    padding-top: 48px;
+    padding-bottom: 52px;
+    min-height: auto;
+  }
+  .chapter-heading {
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+  }
+  .chapter-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  .app-header {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .nav-bottom-bar {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
